@@ -1,0 +1,43 @@
+= The 3D VTT Project
+Rizzen Yazston
+:app-name: 3D VTT Project
+:fyrox: Fyrox Engine
+:fyrox-url: https://fyrox.rs/
+:lua: Lua
+:lua-url: https://lua.org/
+
+Welcome to the *{app-name}*, a 3D Virtual Tablet Top (VTT) for Role Playing Games (RPGs).
+
+Firstly 3D VTT Project is a placeholder name for the project, and will change later on during the development of the RPG tool.
+
+The goals of the {app-name} are as follow:
+
+* Foremost: To provide a true 3D environment that can be viewed from any angle, and tokens have a height position to allow for fully fledge 3D combat, etc;
+
+* Be game system agnostic, by providing various optional resolution tools (dice, cards, coins, etc);
+
+* Character management to create and level up the Playing Characters (PCs);
+
+* For Game Masters (GMs) additional tools to manage many Non-Playing Characters (NPCs);
+
+* Network support as peer-to-peer (GM hosting the game session, with players connecting);
+
+* Chat and event logging (so players can replay the game session);
+
+* Multilingual support via localisation databases.
+
+== Background
+
+The most challenging component of the {app-name} was finding a Rust crate for a 3D renderer, that can be a 3D canvas widget in a 2D application user interface (UI). After many months of searching, the {fyrox-url}[{fyrox}] was discovered, and it included a game editor for the game engine. The editor's UI composed of various 2D panels (called windows in {fyrox} terms) surrounding a 3D canvas widget, that presents a 3D scene, yet can directly interact with the contents of the scene using a mouse. The editor's UI layout was similar to the concept UI for the {app-name}, indicating it was indeed possible to implement. The only feature that was missing at the time in the {fyrox} release 0.34 was a scripting language for dynamic game logic, though it did have a feature of static scripts and plugins (both written in Rust). However one of the contributors of the {fyrox} had been working on a side project to integrate a scripting runtime into the {fyrox}, {lua-url}[{lua}] was the scripting language chosen for the prototype integration, and the prototype had just succeeded, indicating scripting language support will be available in the near future. This lead to the final decision to use the {fyrox} for {app-name}.
+
+== Repository structure
+
+The repository was created using the {fyrox} tool `fyrox-template`, which creates a project directory populated with the structure of a typical {fyrox} based game. Due {app-name} is actually not a 3D game, the various `executor` directories was removed. The `editor` directory was kept to allow users an alternative way to create 3D scenes for adventure modules. The `game` and `game-dylib` are kept as they are needed for both {app-name} and {fyrox} editor to function. New directories was created: `executor` for the executor (essentially `editor` copied and modified); and `vtt3d-core` the actual implementation. The `Cargo.toml` in the project's root directory was adjusted to reflect these removals and additions.
+
+== Usage
+
+Using the development repository navigate to {app-name} root directory and use one of the following commands:
+	Run the Editor: `cargo run --package editor --release`
+	Run the {app-name}: `cargo run --package executor --release`
+
+Note:: Closer to usability proper packaging will be done for distribution installations.

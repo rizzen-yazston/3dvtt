@@ -1,0 +1,6 @@
+= Workspace: executor
+:app-name: 3D VTT Project
+
+This workspace contains the executor of the {app-name}.
+
+Just a slightly modified copy of the `editor` workspace. Modified `Cargo.toml` to point to implementation located in the `vtt3d-core` workspace.

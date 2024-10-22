@@ -1,0 +1,6 @@
+= Workspace: editor
+:app-name: 3D VTT Project
+
+This workspace contains the original executor of the Fyrox Engine editor.
+
+Only the `Cargo.toml` is edited to switch between cargo.io crates and local copy of Fyrox Engine GitHub repository.

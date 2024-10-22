@@ -1,0 +1,31 @@
+= The data of {app-name}
+:app-name: 3D VTT Project
+
+This is where the data of {app-name} to be placed.
+
+The data should be placed into the following structure:
+
+```
+data/
+ ├─ README.asciidoc (this file)
+ ├─ db.sqlite3
+ ├─ systems.reg
+ ├─ publishers.reg
+ ├─ systems/
+ │   ├─ <system1>/ (1st game system using abbreviation)
+ │   │   ├─ info
+ │   │   ├─ <publisher1>/ (1st publisher for the game system)
+ │   │   │   ├─ info
+ │   │   │   ⋮
+ │   │   ├─ <publisher2>/
+ │   │   ├─ <publisher3>/
+ │   │   ⋮
+ │   │   └─ <publisher_nth>/
+ │   ├─ <system2>/ 
+ │   ├─ <system3>/ 
+ │   ⋮
+ │   └─ <system_nth>/ (nth game system)
+ ├─ common/ (contains content that is system agnostic)
+ ⋮
+ └─ scene.rgs (the default Fyrox editor scene)
+```

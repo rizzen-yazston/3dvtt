@@ -1,0 +1,4 @@
+= Workspace: vvt3d-core
+:app-name: 3D VTT Project
+
+This workspace contains the core implementation of the {app-name}.

@@ -1,0 +1,4 @@
+= Workspace: game
+:app-name: 3D VTT Project
+
+This workspace contains the default Fyrox Engine plugin for the {app-name}.

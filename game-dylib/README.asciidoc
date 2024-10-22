@@ -1,0 +1,4 @@
+= Workspace: game-dylib
+:app-name: 3D VTT Project
+
+This workspace contains the dynamic hot reload Fyrox Engine plugin for the {app-name}.
